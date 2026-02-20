@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Starter App - Tasks</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>Starter Task App</h1>
+      <p class="subtitle">Small app now. Easy to extend later.</p>
+
+      <section class="card">
+        <h2>Add Task</h2>
+        <form id="task-form" class="row">
+          <input
+            id="task-input"
+            data-testid="task-input"
+            type="text"
+            placeholder="Type a task..."
+            maxlength="80"
+            required
+          />
+          <button data-testid="add-task-btn" type="submit">Add</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="row between">
+          <h2>Tasks</h2>
+          <span data-testid="task-count" id="task-count">0 total</span>
+        </div>
+        <div class="filters" role="tablist" aria-label="Task filters">
+          <button class="filter-btn is-active" data-filter="all" data-testid="filter-all-btn" type="button">All</button>
+          <button class="filter-btn" data-filter="active" data-testid="filter-active-btn" type="button">Active</button>
+          <button class="filter-btn" data-filter="done" data-testid="filter-done-btn" type="button">Done</button>
+        </div>
+        <ul id="task-list" data-testid="task-list"></ul>
+        <button data-testid="clear-completed-btn" id="clear-completed-btn">Clear Completed</button>
+      </section>
+    </main>
+
+    <template id="task-item-template">
+      <li class="task-item">
+        <label class="row grow">
+          <input class="task-check" type="checkbox" />
+          <span class="task-text"></span>
+        </label>
+        <button class="delete-btn" type="button">Delete</button>
+      </li>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>

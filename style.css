@@ -1,0 +1,179 @@
+:root {
+  --bg: #f4f1ea;
+  --surface: #fffaf1;
+  --text: #1f2a37;
+  --muted: #5a6573;
+  --accent: #cf5f3f;
+  --accent-dark: #ab4528;
+  --border: #dbc9ae;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top left, #f8e7d2, var(--bg));
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.app {
+  width: 100%;
+  max-width: 680px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.subtitle {
+  margin-top: 8px;
+  color: var(--muted);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  margin-top: 16px;
+  box-shadow: 0 10px 30px rgba(65, 42, 24, 0.08);
+}
+
+h2 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.between {
+  justify-content: space-between;
+}
+
+.grow {
+  flex: 1;
+}
+
+input[type="text"] {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 1rem;
+  padding: 10px 12px;
+  background: #fff;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  color: #fff;
+  background: var(--accent);
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--accent-dark);
+}
+
+#task-list {
+  margin: 0;
+  margin-top: 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: #e8ddca;
+  color: #2f3b49;
+  border: 1px solid #cfbe9f;
+  padding: 8px 12px;
+}
+
+.filter-btn:hover {
+  background: #ddcdb1;
+}
+
+.filter-btn.is-active {
+  background: #334155;
+  color: #fff;
+  border-color: #334155;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 0;
+  border-top: 1px dashed var(--border);
+}
+
+.task-item:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.task-check {
+  width: 18px;
+  height: 18px;
+}
+
+.task-text.done {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.delete-btn {
+  background: #4b5563;
+}
+
+.delete-btn:hover {
+  background: #374151;
+}
+
+#task-count {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+#clear-completed-btn {
+  margin-top: 12px;
+  background: #7f1d1d;
+}
+
+#clear-completed-btn:hover {
+  background: #5b1212;
+}
+
+@media (max-width: 560px) {
+  .row {
+    flex-wrap: wrap;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .filter-btn {
+    width: auto;
+  }
+}
