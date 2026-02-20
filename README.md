@@ -42,6 +42,22 @@ Return pass/fail for each step.
 
 After runs, inspect `.playwright-mcp/output` for artifacts.
 
+## Deploy (secure GitHub Pages)
+This repo includes a workflow that deploys only `index.html`, `style.css`, and `app.js` to GitHub Pages.
+
+Security defaults included:
+- HTTPS (GitHub Pages)
+- restrictive Content Security Policy in `index.html`
+- least-privilege deploy workflow permissions
+
+### Enable deployment
+1. In GitHub, open `Settings -> Pages`.
+2. Under Build and deployment, set `Source` to `GitHub Actions`.
+3. Push to `main` (or run the workflow manually).
+
+Your site URL will be:
+- `https://<your-github-username>.github.io/<repo-name>/`
+
 ## Project files
 - `index.html` - UI structure
 - `style.css` - styles
